@@ -10,7 +10,7 @@ const Header: FC = () => {
     const [isScheduleOrSessionSelected, setIsScheduleOrSessionSelected] = useState(true)
 
     return (
-        <Box p={'16px 70px 48px'} margin={'0 auto'}>
+        <Box p={'16px 70px 28px'} margin={'0 auto'}>
 
             <Stack direction={'row'}>
                 <img style={{width: '100px', height: '120px'}} src={nltuIcon} alt="nltuIcon"/>
@@ -31,7 +31,7 @@ const Header: FC = () => {
 
                     <Stack direction={'row'} gap={'15px'} justifyContent={'center'} alignItems={'center'}>
                         <Typography variant={'h6'} fontSize={'20px'}>
-                            Розклад занять для :
+                            Розклад занять  для :
                         </Typography>
                         <GroupChooser/>
                     </Stack>

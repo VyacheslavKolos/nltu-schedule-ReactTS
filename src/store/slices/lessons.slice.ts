@@ -9,7 +9,7 @@ interface ILessonsState {
 }
 
 const initialState: ILessonsState = {
-    isPublished: false,
+    isPublished: true,
     errors: []
 }
 

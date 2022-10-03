@@ -37,16 +37,16 @@ const NavigationBar = () => {
                     }}>
 
                         <Box>
-                            {isPublished ? <ActiveButton changePublished={changePublished} name={'Published'}/> :
-                                <InActiveButton changePublished={changePublished} status={true} name={'Published'}/>
+                            {isPublished ? <ActiveButton changePublished={changePublished} name={'Чисельник'}/> :
+                                <InActiveButton changePublished={changePublished} status={true} name={'Чисельник'}/>
                             }
                         </Box>
 
                         <Box>
                             {isPublished ?
                                 <InActiveButton changePublished={changePublished} status={false}
-                                                name={'Unpublished'}/> :
-                                <ActiveButton changePublished={changePublished} name={'Unpublished'}/>
+                                                name={'Знаменник'}/> :
+                                <ActiveButton changePublished={changePublished} name={'Знаменник'}/>
                             }
                         </Box>
 
