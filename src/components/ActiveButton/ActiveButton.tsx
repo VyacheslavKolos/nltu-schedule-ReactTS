@@ -16,7 +16,7 @@ const ActiveButton: FC<{ changePublished: IProps, name: string }> = ({changePubl
 
                 onClick={() => changePublished(isPublished ? true: false)}
                 sx={{
-                    width: {lg:'233px',xs:'328px'},
+                    width: {lg:'256px',xs:'328px'},
                     height: '46px',
                     borderRadius: '61px',
                 }}><Typography fontFamily={'Montserrat'} fontStyle={'normal'}

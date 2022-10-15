@@ -24,8 +24,9 @@ const NavigationBar = () => {
             <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}
                    sx={{justifyContent: {lg: 'space-between', xs: 'center'}}}>
                 <Stack justifyContent={'center'}
+                       alignItems={'center'}
                        bgcolor={'#E9E9E9'} sx={{
-                    width: {lg: '557px', xs: '357px'},
+                    width: {lg: '600px', xs: '357px'},
                     height: {lg: '71px', xs: '132px'},
                     borderRadius: {lg: '47px', xs: '18px'}
                 }}>
@@ -37,16 +38,16 @@ const NavigationBar = () => {
                     }}>
 
                         <Box>
-                            {isPublished ? <ActiveButton changePublished={changePublished} name={'Чисельник'}/> :
-                                <InActiveButton changePublished={changePublished} status={true} name={'Чисельник'}/>
+                            {isPublished ? <ActiveButton changePublished={changePublished} name={'Поточний тиждень'}/> :
+                                <InActiveButton changePublished={changePublished} status={true} name={'Поточний тиждень'}/>
                             }
                         </Box>
 
                         <Box>
                             {isPublished ?
                                 <InActiveButton changePublished={changePublished} status={false}
-                                                name={'Знаменник'}/> :
-                                <ActiveButton changePublished={changePublished} name={'Знаменник'}/>
+                                                name={'Наступний тиждень'}/> :
+                                <ActiveButton changePublished={changePublished} name={'Наступний тиждень'}/>
                             }
                         </Box>
 

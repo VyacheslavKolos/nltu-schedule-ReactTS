@@ -1,8 +1,11 @@
-const NumeratorLessonsSchedule = [
+import {IGroup} from "../../interfaces";
+
+
+export const NumeratorLessonsSchedule : IGroup[] = [
     {
         group: 'Kn31-1',
         schedule: [{
-            day: 'Monday',
+            day: 'Понеділок',
             lessons: [{
                 '8:30': null,
                 '10:20': {
@@ -23,7 +26,7 @@ const NumeratorLessonsSchedule = [
             ]
         },
             {
-                day: 'Tuesday',
+                day: 'Вівторок',
                 lessons: [{
                     '8:30': {
                         name: "Програмування мобільних систем ",
@@ -47,17 +50,20 @@ const NumeratorLessonsSchedule = [
                 },
                 ]
             },
-            // {
-            //     day: 'Wednesday'
-            // },
-            // {
-            //     day: 'Thursday'
-            // },
-            // {
-            //     day: 'Friday'
-            // }
+            {
+                day: 'Cереда',
+                lessons:[{}]
+            },
+            {
+                day: 'Четвер',
+                lessons:[{}]
+            },
+            {
+                day: 'Пятниця',
+                lessons:[{}]
+            }
             ]
     }
 ]
 
-export const DominatorLessonsSchedule = []
+// export const DominatorLessonsSchedule = []

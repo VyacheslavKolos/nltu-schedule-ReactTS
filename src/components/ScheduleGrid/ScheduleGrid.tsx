@@ -93,22 +93,57 @@
 //     );
 // }
 //
-//
 // export default ScheduleGrid;
 
 
 import React from 'react';
 import {Box} from "@mui/material";
+import {NumeratorLessonsSchedule} from "../../data/lessonsSchedule/lessonsSchedule";
 
 const ScheduleGrid = () => {
+
+    const {group, schedule} = NumeratorLessonsSchedule[0];
+
     return (
-        <Box display={'grid'}
+        <Box height={400} display={'grid'}
              sx={{pl: '100px', position: 'relative', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px 1.5rem'}}>
-            <Box sx={{fontWeight:'600', fontSize:'16px', color:'rgb(20, 21, 24)', zIndex:'2', boxSizing:'inherit'}}>Понеділок</Box>
-            <Box sx={{fontWeight:'600', fontSize:'16px', color:'rgb(20, 21, 24)', zIndex:'2', boxSizing:'inherit'}}>Понеділок</Box>
-            <Box sx={{fontWeight:'600', fontSize:'16px', color:'rgb(20, 21, 24)', zIndex:'2', boxSizing:'inherit'}}>Понеділок</Box>
-            <Box sx={{fontWeight:'600', fontSize:'16px', color:'rgb(20, 21, 24)', zIndex:'2', boxSizing:'inherit'}}>Понеділок</Box>
-            <Box sx={{fontWeight:'600', fontSize:'16px', color:'rgb(20, 21, 24)', zIndex:'2', boxSizing:'inherit'}}>Понеділок</Box>
+            {
+                schedule.map(day => (
+                    <Box>
+                        <Box sx={{fontWeight: 600, fontSize: '16px', zIndex: 2, color: 'rgb(20, 21, 24);'}}>
+                            {day.day}
+                        </Box>
+
+                        <Box sx={{position: 'relative', alignSelf: 'start', gridColumn: '1 / -1'}}>
+                            <Box left={'-90px'} right={'0px'} top={'-17px'} position={'absolute'}
+                                 sx={{display: 'flex', alignItems: 'center'}}>
+                                <Box sx={{
+                                    width: '64px',
+                                    height: '36px',
+                                    background: 'black',
+                                    borderRadius: '42px',
+                                    color: 'white',
+                                    fontWeight: 600,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                    {day.lessons.map(time => (
+                                        <p>8:30</p>
+                                    ))}
+                                </Box>
+                                <Box sx={{
+                                    borderTop: '1px dashed rgb(20, 21, 24)', borderTopWidth: '1px',
+                                    borderTopStyle: 'dashed', borderTopColor: 'black', width: '100%'
+                                }}>
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+
+                ))
+            }
+
         </Box>
     );
 };
