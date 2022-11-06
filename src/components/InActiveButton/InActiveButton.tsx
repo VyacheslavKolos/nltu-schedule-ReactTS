@@ -4,7 +4,6 @@ import {Typography} from "@mui/material";
 
 interface IProps {
     (bool: boolean): void;
-
 }
 
 const InActiveButton : FC<{ changePublished: IProps ,status:boolean, name:string}> = ({changePublished,status,name}) => {

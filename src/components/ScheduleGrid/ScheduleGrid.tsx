@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import {Stack, Typography} from "@mui/material";
 import {NumeratorLessonsSchedule} from "../../data/lessonsSchedule/lessonsSchedule";
+import {FC} from "react";
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -15,43 +16,43 @@ const Item = styled(Paper)(({theme}) => ({
     width: '80%'
 }));
 
-function FormRow() {
+
+const FormRow: FC<{ time: string }> = ({time}) => {
     return (
-        <React.Fragment>
-            <Stack flexDirection={'column'} width={'100%'} pb={'30px'}>
-                <Stack direction={'row'} alignItems={'center'}>
-                    <Typography>8:30</Typography>
-                    <Box bgcolor={'blue'} width={'100%'} height={'2px'}></Box>
-                </Stack>
-
-                <Stack flexDirection={'row'}>
-
-                    <Grid item xs={2.4}>
-                        <Item>Item1</Item>
-                    </Grid>
-                    <Grid item xs={2.4}>
-                        <Item>Item2</Item>
-                    </Grid>
-                    <Grid item xs={2.4}>
-                        <Item>Item</Item>
-                    </Grid>
-                    <Grid item xs={2.4}>
-                        <Item>Item</Item>
-                    </Grid>
-                    <Grid item xs={2.4}>
-                        <Item>Item</Item>
-                    </Grid></Stack>
-
+        <Stack flexDirection={'column'} width={'100%'} pb={'30px'}>
+            <Stack direction={'row'} alignItems={'center'}>
+                <Typography>{time}</Typography>
+                <Box bgcolor={'blue'} width={'100%'} height={'2px'}></Box>
             </Stack>
-        </React.Fragment>
+
+            <Stack flexDirection={'row'}>
+
+                <Grid item xs={2.4}>
+                    <Item>Item1</Item>
+                </Grid>
+                <Grid item xs={2.4}>
+                    <Item>Item2</Item>
+                </Grid>
+                <Grid item xs={2.4}>
+                    <Item>Item</Item>
+                </Grid>
+                <Grid item xs={2.4}>
+                    <Item>Item</Item>
+                </Grid>
+                <Grid item xs={2.4}>
+                    <Item>Item</Item>
+                </Grid></Stack>
+
+        </Stack>
     );
-}
+};
+
 
 const ScheduleGrid = () => {
 
     const {group, schedule} = NumeratorLessonsSchedule[0];
 
-    schedule.map(day=> day.lessons.map(less=> console.log(less.info)))
+    schedule.map(day => console.log(day.lessons))
 
 
     return (
@@ -73,35 +74,16 @@ const ScheduleGrid = () => {
                     </Stack>
                 </Grid>
 
-                {schedule.map(day=>(
-                    <Grid container item spacing={3} key={day.day}>
-                        <FormRow/>
-                    </Grid>
+                {schedule.map(day => (
+
+                    day.lessons.map(less => (
+                        <Grid container item spacing={3}>
+                            <FormRow time={less.time}/>
+                        </Grid>
+                    ))
+
                 ))}
 
-                {/*<Grid container item spacing={3}>*/}
-                {/*    <FormRow/>*/}
-                {/*</Grid>*/}
-
-
-                {/*<Grid container item spacing={3}>*/}
-                {/*    <FormRow/>*/}
-                {/*</Grid>*/}
-
-
-                {/*<Grid container item spacing={3}>*/}
-                {/*    <FormRow/>*/}
-                {/*</Grid>*/}
-
-
-                {/*<Grid container item spacing={3}>*/}
-                {/*    <FormRow/>*/}
-                {/*</Grid>*/}
-
-
-                {/*<Grid container item spacing={3}>*/}
-                {/*    <FormRow/>*/}
-                {/*</Grid>*/}
 
             </Grid>
         </Box>
