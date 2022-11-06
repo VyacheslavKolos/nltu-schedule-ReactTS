@@ -5,10 +5,12 @@ export interface IGroup {
 
 interface IDay {
     day: string;
-    lessons: [Record<string, null | ILesson>];
+    lessons: {time:string, info:null | ILesson}[]
+
 }
 
 interface ILesson {
+
     name: string;
     teacher: string;
     link: string;
