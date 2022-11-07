@@ -2,19 +2,19 @@ import React from 'react';
 import {Box, Stack} from "@mui/material";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {setIsPublishedEvent} from "../../store/slices";
+import {setIsNumeratorWeek} from "../../store/slices";
 import {ActiveButton} from "../ActiveButton/ActiveButton";
 import {InActiveButton} from "../InActiveButton/InActiveButton";
 
 
 const NavigationBar = () => {
 
-    const {isPublished} = useAppSelector(state => state.lessonReducer)
+    const {isNumerator} = useAppSelector(state => state.lessonReducer)
 
     const dispatch = useAppDispatch();
 
     const changePublished = (bool: boolean) => {
-        dispatch(setIsPublishedEvent(bool))
+        dispatch(setIsNumeratorWeek(bool))
     }
 
 
@@ -38,13 +38,13 @@ const NavigationBar = () => {
                     }}>
 
                         <Box>
-                            {isPublished ? <ActiveButton changePublished={changePublished} name={'Поточний тиждень'}/> :
+                            {isNumerator ? <ActiveButton changePublished={changePublished} name={'Поточний тиждень'}/> :
                                 <InActiveButton changePublished={changePublished} status={true} name={'Поточний тиждень'}/>
                             }
                         </Box>
 
                         <Box>
-                            {isPublished ?
+                            {isNumerator ?
                                 <InActiveButton changePublished={changePublished} status={false}
                                                 name={'Наступний тиждень'}/> :
                                 <ActiveButton changePublished={changePublished} name={'Наступний тиждень'}/>

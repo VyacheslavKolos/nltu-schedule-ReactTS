@@ -4,15 +4,18 @@ export interface IGroup {
 }
 
 interface IDay {
-    day: string;
-    lessons: {time:string, info:null | ILesson}[]
+    time: string;
+    lessons: ILesson[]
 
 }
 
-interface ILesson {
+export interface ILesson {
+    day: string;
+    lessonInfo: {
+        name: string;
+        teacher: string;
+        link: string;
+        type: string;
+    } | null
 
-    name: string;
-    teacher: string;
-    link: string;
-    type: string;
 }

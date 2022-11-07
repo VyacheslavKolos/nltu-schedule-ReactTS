@@ -6,3 +6,4 @@ export * from './InActiveButton/InActiveButton';
 export * from './Session';
 export * from './Schedule';
 export * from './ScheduleGrid/ScheduleGrid';
+export * from './LessonCard';
