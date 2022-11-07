@@ -4,6 +4,7 @@ import {ILesson} from "../interfaces";
 import SchoolIcon from '@mui/icons-material/School';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import Button from "@mui/material/Button";
 
 
 const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
@@ -44,10 +45,15 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
             </Stack>
 
             <Stack direction={'row'} gap={'6px'} alignItems={'center'}>
+                {/*<Link href={lessonInfo?.link} underline="hover" target={'_blank'}>*/}
+                {/*    go to the lesson*/}
+                {/*</Link>*/}
+
+                <Button variant="contained" href={lessonInfo?.link}>
                 <InsertLinkIcon/>
-                <Link href={lessonInfo?.link} underline="hover" target={'_blank'}>
                     go to the lesson
-                </Link>
+                </Button>
+
             </Stack>
 
         </Stack>
