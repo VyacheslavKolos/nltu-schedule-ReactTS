@@ -16,6 +16,8 @@ const GroupChooser = () => {
         setAnchorEl(null);
     };
 
+
+
     return (
         <div>
             <Button
@@ -43,7 +45,7 @@ const GroupChooser = () => {
                 }}
             >
                 <MenuItem onClick={handleClose} sx={{width:'200px'}}>КН-31/1</MenuItem>
-                {/*<MenuItem onClick={handleClose}>My account</MenuItem>*/}
+                <MenuItem onClick={handleClose}>КН-31/2</MenuItem>
                 {/*<MenuItem onClick={handleClose}>Logout</MenuItem>*/}
             </Menu>
         </div>

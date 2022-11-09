@@ -12,7 +12,6 @@ function App() {
     <div className="App">
           <Header/>
 
-
         <Routes>
             <Route path="/" element={<Schedule />} />
             <Route path="/session" element={<Session />} />

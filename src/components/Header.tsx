@@ -51,7 +51,7 @@ const Header: FC = () => {
                 <Stack direction={'column'} alignItems={'center'}>
                     <Typography fontFamily={'Snell Roundhand, cursive'} fontSize={'16px'}>
                         Made by
-                    </Typography >
+                    </Typography>
                     <Typography fontFamily={'Snell Roundhand, cursive'} fontSize={'16px'}>
                         Vyacheslav Kolos
                     </Typography> </Stack>
