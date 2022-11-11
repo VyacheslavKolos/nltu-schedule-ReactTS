@@ -5,6 +5,8 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import {Stack, Typography} from "@mui/material";
 import {
+    AllGroupsDominatorSchedule,
+    AllGroupsNumeratorSchedule,
     DominatorLessonsSchedule_KN_31_2,
     NumeratorLessonsSchedule_KN_31_2
 } from "../../data/lessonsSchedule/lessonsSchedule";
@@ -41,12 +43,12 @@ const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
 
                 {lessons.map(less => (
                     less.lessonInfo ?
-                        <Grid item xl={2.4}>
+                        <Grid item xl={2.4} key={less.day}>
                             <Item sx={{height: '140px'}}>
                                 <LessonCard lesson={less}/>
                             </Item>
                         </Grid> :
-                        <Grid item xl={2.4}>
+                        <Grid item xl={2.4} key={less.day}>
                             <Item
                                 sx={{height: '140px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 <Typography variant={'h5'}>Немає заняття</Typography>
@@ -66,6 +68,8 @@ const ScheduleGrid = () => {
 
     const {schedule, group} = groupSchedule
 
+
+
     const dispatch = useAppDispatch();
 
     let currentDate : any = new Date();
@@ -73,21 +77,44 @@ const ScheduleGrid = () => {
     let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
     let weekNumber = Math.ceil(days / 7);
 
+    console.log(weekNumber);
+
+    // //Змінює поточний тиждень -> наступний
+    // useEffect(() => {
+    //     if (!(weekNumber % 2 ===0)) {
+    //         if (isNumerator) {
+    //             dispatch(setGroupSchedule(NumeratorLessonsSchedule_KN_31_2))
+    //         } else {
+    //             dispatch(setGroupSchedule(DominatorLessonsSchedule_KN_31_2))
+    //         }
+    //     } else {
+    //         if (isNumerator) {
+    //             dispatch(setGroupSchedule(DominatorLessonsSchedule_KN_31_2))
+    //         } else {
+    //             dispatch(setGroupSchedule(NumeratorLessonsSchedule_KN_31_2))
+    //         }
+    //     }
+    // }, [isNumerator])
+
+
+    // Змінює поточний тиждень -> наступний
     useEffect(() => {
-        if (!(weekNumber % 2 ===0)) {
-            if (isNumerator) {
-                dispatch(setGroupSchedule(NumeratorLessonsSchedule_KN_31_2))
+        if (!(weekNumber % 2 ===0)) { // якщо зараз (парний) тиждень, то відмальовую нумератор, інакше домінатор
+            if (isNumerator) { // на світчері поточний/наступний тиждень
+                dispatch(setGroupSchedule((AllGroupsNumeratorSchedule.filter(elem => elem.group === group)[0])))  //то відмальовую нумератор, інакше домінатор
             } else {
-                dispatch(setGroupSchedule(DominatorLessonsSchedule_KN_31_2))
+                dispatch(setGroupSchedule((AllGroupsDominatorSchedule.filter(elem => elem.group === group)[0])))//інакше домінатор
             }
-        } else {
+        }
+        else {
             if (isNumerator) {
-                dispatch(setGroupSchedule(DominatorLessonsSchedule_KN_31_2))
+                dispatch(setGroupSchedule((AllGroupsDominatorSchedule.filter(elem => elem.group === group)[0])))
             } else {
-                dispatch(setGroupSchedule(NumeratorLessonsSchedule_KN_31_2))
+                dispatch(setGroupSchedule((AllGroupsNumeratorSchedule.filter(elem => elem.group === group)[0])))
             }
         }
     }, [isNumerator])
+
 
 
     return (
@@ -109,8 +136,8 @@ const ScheduleGrid = () => {
                     </Stack>
                 </Grid>
 
-                {schedule.map(day => (
-                    <Grid container item spacing={3}>
+                {schedule.map((day,ind)  => (
+                    <Grid container item spacing={3} key={ind}>
                         <FormRow time={day.time} lessons={day.lessons}/>
                     </Grid>
                 ))}

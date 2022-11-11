@@ -7,14 +7,14 @@ interface IProps {
     (bool: boolean): void;
 }
 
-const ActiveButton: FC<{ changePublished: IProps, name: string }> = ({changePublished, name}) => {
+const ActiveButton: FC<{ changeNumerator: IProps, name: string }> = ({changeNumerator, name}) => {
 
     const {isNumerator} = useAppSelector(state => state.lessonReducer)
 
     return (
         <Button variant="contained"
 
-                onClick={() => changePublished(isNumerator)}
+                onClick={() => changeNumerator(isNumerator)}
                 sx={{
                     width: {lg:'256px',xs:'328px'},
                     height: '46px',

@@ -4,19 +4,32 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {Stack, Typography} from "@mui/material";
+import {AllGroupsNumeratorSchedule, NumeratorLessonsSchedule_KN_31_2} from "../data/lessonsSchedule/lessonsSchedule";
+import {useState} from "react";
+import {IGroup} from "../interfaces";
+import {useAppDispatch, useAppSelector} from "../hooks";
+import {setGroupSchedule, setIsNumeratorWeek} from "../store/slices";
 
 
 const GroupChooser = () => {
+
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+    const [selectedGroup, setSelectedGroup] = useState<IGroup>(NumeratorLessonsSchedule_KN_31_2);
+
+    const dispatch = useAppDispatch();
+
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+
+    const handleClose = (group: IGroup) => {
+
+        setSelectedGroup(group)
+        dispatch(setGroupSchedule(group))
         setAnchorEl(null);
     };
-
-
 
     return (
         <div>
@@ -30,7 +43,7 @@ const GroupChooser = () => {
             >
                 <Stack direction={'row'} justifyContent={'space-between'} width={'95%'}>
                     <Typography>
-                        КН-31/2
+                        {selectedGroup?.group}
                     </Typography>
                     <KeyboardArrowDownIcon/>
                 </Stack>
@@ -44,9 +57,11 @@ const GroupChooser = () => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem onClick={handleClose} sx={{width:'200px'}}>КН-31/1</MenuItem>
-                <MenuItem onClick={handleClose}>КН-31/2</MenuItem>
-                {/*<MenuItem onClick={handleClose}>Logout</MenuItem>*/}
+                {AllGroupsNumeratorSchedule.map(grp => (
+                    <MenuItem onClick={() => handleClose(grp)} sx={{width: '200px'}}
+                              key={grp.group}>{grp.group}</MenuItem>
+                ))}
+
             </Menu>
         </div>
     );

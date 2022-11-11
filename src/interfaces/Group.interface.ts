@@ -1,4 +1,5 @@
 export interface IGroup {
+    isNumerator:boolean
     group: string;
     schedule: IDay[];
 }

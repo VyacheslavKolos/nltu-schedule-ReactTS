@@ -13,7 +13,7 @@ const NavigationBar = () => {
 
     const dispatch = useAppDispatch();
 
-    const changePublished = (bool: boolean) => {
+    const changeNumerator = (bool: boolean) => {
         dispatch(setIsNumeratorWeek(bool))
     }
 
@@ -38,16 +38,16 @@ const NavigationBar = () => {
                     }}>
 
                         <Box>
-                            {isNumerator ? <ActiveButton changePublished={changePublished} name={'Поточний тиждень'}/> :
-                                <InActiveButton changePublished={changePublished} status={true} name={'Поточний тиждень'}/>
+                            {isNumerator ? <ActiveButton changeNumerator={changeNumerator} name={'Поточний тиждень'}/> :
+                                <InActiveButton changeNumerator={changeNumerator} status={true} name={'Поточний тиждень'}/>
                             }
                         </Box>
 
                         <Box>
                             {isNumerator ?
-                                <InActiveButton changePublished={changePublished} status={false}
+                                <InActiveButton changeNumerator={changeNumerator} status={false}
                                                 name={'Наступний тиждень'}/> :
-                                <ActiveButton changePublished={changePublished} name={'Наступний тиждень'}/>
+                                <ActiveButton changeNumerator={changeNumerator} name={'Наступний тиждень'}/>
                             }
                         </Box>
 

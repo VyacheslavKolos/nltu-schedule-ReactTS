@@ -6,10 +6,10 @@ interface IProps {
     (bool: boolean): void;
 }
 
-const InActiveButton : FC<{ changePublished: IProps ,status:boolean, name:string}> = ({changePublished,status,name}) => {
+const InActiveButton : FC<{ changeNumerator: IProps ,status:boolean, name:string}> = ({changeNumerator,status,name}) => {
     return (
         <Button variant="text"
-                onClick={() => changePublished(status)}
+                onClick={() => changeNumerator(status)}
                 sx={{
                     width: {lg:'256px',xs:'328px'},
                     height: '46px',
