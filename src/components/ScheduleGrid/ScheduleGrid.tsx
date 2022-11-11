@@ -77,24 +77,6 @@ const ScheduleGrid = () => {
     let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
     let weekNumber = Math.ceil(days / 7);
 
-    console.log(weekNumber);
-
-    // //Змінює поточний тиждень -> наступний
-    // useEffect(() => {
-    //     if (!(weekNumber % 2 ===0)) {
-    //         if (isNumerator) {
-    //             dispatch(setGroupSchedule(NumeratorLessonsSchedule_KN_31_2))
-    //         } else {
-    //             dispatch(setGroupSchedule(DominatorLessonsSchedule_KN_31_2))
-    //         }
-    //     } else {
-    //         if (isNumerator) {
-    //             dispatch(setGroupSchedule(DominatorLessonsSchedule_KN_31_2))
-    //         } else {
-    //             dispatch(setGroupSchedule(NumeratorLessonsSchedule_KN_31_2))
-    //         }
-    //     }
-    // }, [isNumerator])
 
 
     // Змінює поточний тиждень -> наступний
