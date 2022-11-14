@@ -72,12 +72,14 @@ const ScheduleGrid = () => {
 
     const dispatch = useAppDispatch();
 
+
+    // винести в окремий файл, те ж саме є і в файлі groupChooser
     let currentDate : any = new Date();
     let startDate : any = new Date(currentDate.getFullYear(), 0, 1);
     let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
     let weekNumber = Math.ceil(days / 7);
 
-
+    console.log(groupSchedule);
 
     // Змінює поточний тиждень -> наступний
     useEffect(() => {

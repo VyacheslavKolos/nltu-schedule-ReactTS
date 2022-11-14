@@ -4,7 +4,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {Stack, Typography} from "@mui/material";
-import {AllGroupsNumeratorSchedule, NumeratorLessonsSchedule_KN_31_2} from "../data/lessonsSchedule/lessonsSchedule";
+import {
+    AllGroupsDominatorSchedule,
+    AllGroupsNumeratorSchedule,
+    NumeratorLessonsSchedule_KN_31_2
+} from "../data/lessonsSchedule/lessonsSchedule";
 import {useState} from "react";
 import {IGroup} from "../interfaces";
 import {useAppDispatch, useAppSelector} from "../hooks";
@@ -30,6 +34,12 @@ const GroupChooser = () => {
         dispatch(setGroupSchedule(group))
         setAnchorEl(null);
     };
+
+    let currentDate: any = new Date();
+    let startDate: any = new Date(currentDate.getFullYear(), 0, 1);
+    let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
+    let weekNumber: number | boolean = Math.ceil(days / 7);
+    weekNumber = weekNumber % 2 === 0;
 
     return (
         <div>
@@ -57,10 +67,20 @@ const GroupChooser = () => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {AllGroupsNumeratorSchedule.map(grp => (
-                    <MenuItem onClick={() => handleClose(grp)} sx={{width: '200px'}}
-                              key={grp.group}>{grp.group}</MenuItem>
-                ))}
+
+                {
+                    !weekNumber ?
+                        AllGroupsNumeratorSchedule.map(grp => (
+                            <MenuItem onClick={() => handleClose(grp)} sx={{width: '200px'}}
+                                      key={grp.group}>{grp.group}</MenuItem>
+                        ))
+                        :
+                        AllGroupsDominatorSchedule.map(grp => (
+                            <MenuItem onClick={() => handleClose(grp)} sx={{width: '200px'}}
+                                      key={grp.group}>{grp.group}</MenuItem>
+                        ))
+                }
+
 
             </Menu>
         </div>
