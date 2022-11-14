@@ -141,7 +141,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                         lessonInfo: {
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
-                            link: 'https://meet.google.com/xhf-obza-hij',
+                            link: 'https://meet.google.com',
                             type: 'Лаболаторне'
                         }
                     },
@@ -236,7 +236,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                         lessonInfo: {
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
-                            link: 'https://meet.google.com/xhf-obza-hij',
+                            link: 'https://meet.google.com',
                             type: 'Лекція'
                         }
                     },
@@ -344,7 +344,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                         lessonInfo: {
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
-                            link: 'https://meet.google.com/xhf-obza-hij',
+                            link: 'https://meet.google.com',
                             type: 'Лаболаторне'
                         }
                     },
@@ -457,7 +457,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                         lessonInfo: {
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
-                            link: 'https://meet.google.com/xhf-obza-hij',
+                            link: 'https://meet.google.com',
                             type: 'Лаболаторне'
                         }
                     },
@@ -642,7 +642,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                         lessonInfo: {
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
-                            link: 'https://meet.google.com/xhf-obza-hij',
+                            link: 'https://meet.google.com',
                             type: 'Лекція'
                         }
                     },
@@ -660,7 +660,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                         lessonInfo: {
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
-                            link: 'https://meet.google.com/xhf-obza-hij',
+                            link: 'https://meet.google.com',
                             type: 'Лаболаторне'
                         }
                     },
