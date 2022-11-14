@@ -13,6 +13,7 @@ import {useState} from "react";
 import {IGroup} from "../interfaces";
 import {useAppDispatch, useAppSelector} from "../hooks";
 import {setGroupSchedule, setIsNumeratorWeek} from "../store/slices";
+import {isEvenWeek} from "../usefulFunctions/usefulFunctions";
 
 
 const GroupChooser = () => {
@@ -23,6 +24,8 @@ const GroupChooser = () => {
 
     const dispatch = useAppDispatch();
 
+    const {isNumerator} = useAppSelector(state => state.lessonReducer)
+
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
@@ -30,16 +33,17 @@ const GroupChooser = () => {
 
     const handleClose = (group: IGroup) => {
 
+        if (!isNumerator){
+            dispatch(setIsNumeratorWeek(true))
+        }
+
         setSelectedGroup(group)
         dispatch(setGroupSchedule(group))
+
         setAnchorEl(null);
     };
 
-    let currentDate: any = new Date();
-    let startDate: any = new Date(currentDate.getFullYear(), 0, 1);
-    let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
-    let weekNumber: number | boolean = Math.ceil(days / 7);
-    weekNumber = weekNumber % 2 === 0;
+
 
     return (
         <div>
@@ -69,7 +73,7 @@ const GroupChooser = () => {
             >
 
                 {
-                    !weekNumber ?
+                    !isEvenWeek() ?
                         AllGroupsNumeratorSchedule.map(grp => (
                             <MenuItem onClick={() => handleClose(grp)} sx={{width: '200px'}}
                                       key={grp.group}>{grp.group}</MenuItem>
@@ -80,7 +84,6 @@ const GroupChooser = () => {
                                       key={grp.group}>{grp.group}</MenuItem>
                         ))
                 }
-
 
             </Menu>
         </div>

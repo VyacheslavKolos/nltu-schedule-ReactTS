@@ -15,6 +15,7 @@ import {ILesson} from "../../interfaces";
 import {LessonCard} from "../LessonCard";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setGroupSchedule} from "../../store/slices";
+import {isEvenWeek} from "../../usefulFunctions/usefulFunctions";
 
 
 const Item = styled(Paper)(({theme}) => ({
@@ -68,22 +69,11 @@ const ScheduleGrid = () => {
 
     const {schedule, group} = groupSchedule
 
-
-
     const dispatch = useAppDispatch();
-
-
-    // винести в окремий файл, те ж саме є і в файлі groupChooser
-    let currentDate : any = new Date();
-    let startDate : any = new Date(currentDate.getFullYear(), 0, 1);
-    let days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
-    let weekNumber = Math.ceil(days / 7);
-
-    console.log(groupSchedule);
 
     // Змінює поточний тиждень -> наступний
     useEffect(() => {
-        if (!(weekNumber % 2 ===0)) { // якщо зараз (парний) тиждень, то відмальовую нумератор, інакше домінатор
+        if (!isEvenWeek()) { // якщо зараз (парний) тиждень, то відмальовую нумератор, інакше домінатор
             if (isNumerator) { // на світчері поточний/наступний тиждень
                 dispatch(setGroupSchedule((AllGroupsNumeratorSchedule.filter(elem => elem.group === group)[0])))  //то відмальовую нумератор, інакше домінатор
             } else {
