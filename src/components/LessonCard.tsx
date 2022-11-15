@@ -45,14 +45,13 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
             </Stack>
 
             <Stack direction={'row'} gap={'6px'} alignItems={'center'}>
-                {/*<Link href={lessonInfo?.link} underline="hover" target={'_blank'}>*/}
-                {/*    go to the lesson*/}
-                {/*</Link>*/}
 
-                <Button variant="contained" href={lessonInfo?.link}>
-                <InsertLinkIcon/>
+                <Link target={'_blank'} href={lessonInfo?.link}>
+                    <Button variant="contained"  >
+                    <InsertLinkIcon/>
                     go to the lesson
                 </Button>
+                </Link>
 
             </Stack>
 
