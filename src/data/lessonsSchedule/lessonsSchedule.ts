@@ -69,7 +69,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                         lessonInfo:  {
                             name: 'Програмув. мобільних систем',
                             teacher: 'Івасюк Р.В.',
-                            link: 'https://meet.google.com/amx-jxsm-adk',
+                            link: 'https://meet.google.com/yar-vkvb-vqm',
                             type: 'Лаболаторне'
                         }
                     },
@@ -272,7 +272,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                         lessonInfo:  {
                             name: 'Програмув. мобільних систем',
                             teacher: 'Івасюк Р.В.',
-                            link: 'https://meet.google.com/amx-jxsm-adk',
+                            link: 'https://meet.google.com/yar-vkvb-vqm',
                             type: 'Лаболаторне'
                         }
                     },
@@ -524,8 +524,8 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                         day: 'П\'ятниця',
                         lessonInfo:   {
                             name: 'Програмув. мобільних систем',
-                            teacher: 'Івасюк Р.В.',
-                            link: 'https://meet.google.com/amx-jxsm-adk',
+                            teacher: 'Сало М.Ф.',
+                            link: 'https://meet.google.com/mab-hbgx-eyq',
                             type: 'Лаболаторне'
                         }
                     },
@@ -727,8 +727,8 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                         day: 'П\'ятниця',
                         lessonInfo:  {
                             name: 'Програмув. мобільних систем',
-                            teacher: 'Івасюк Р.В.',
-                            link: 'https://meet.google.com/amx-jxsm-adk',
+                            teacher: 'Сало М.Ф.',
+                            link: 'https://meet.google.com/mab-hbgx-eyq',
                             type: 'Лаболаторне'
                         }
                     },
