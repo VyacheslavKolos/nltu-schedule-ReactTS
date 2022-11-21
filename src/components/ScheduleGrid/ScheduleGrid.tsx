@@ -7,8 +7,6 @@ import {Stack, Typography} from "@mui/material";
 import {
     AllGroupsDominatorSchedule,
     AllGroupsNumeratorSchedule,
-    DominatorLessonsSchedule_KN_31_2,
-    NumeratorLessonsSchedule_KN_31_2
 } from "../../data/lessonsSchedule/lessonsSchedule";
 import {FC, useEffect} from "react";
 import {ILesson} from "../../interfaces";

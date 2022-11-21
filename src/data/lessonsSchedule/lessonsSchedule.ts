@@ -52,7 +52,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "Веб-технології та веб-дизайн",
                             teacher: 'Яркун В.І.',
                             link: 'https://meet.google.com/tkb-nsfk-bvs',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -61,7 +61,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "ШНМ",
                             teacher: 'Розумовський М.П.',
                             link: 'https://meet.google.com/beb-kffp-pif',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -70,7 +70,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: 'Програмув. мобільних систем',
                             teacher: 'Івасюк Р.В.',
                             link: 'https://meet.google.com/yar-vkvb-vqm',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -111,7 +111,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "Моделювання систем",
                             teacher: 'Сінкевич О.В.',
                             link: 'https://meet.google.com/rki-wfdd-umk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -120,7 +120,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "Управління ІТ-проектами",
                             teacher: 'Яцишин С.І.',
                             link: 'https://meet.google.com/nnd-gtfc-muk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -142,7 +142,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
                             link: 'https://meet.google.com',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -151,7 +151,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "Технол. прог-ня та створ. прог. продуктів",
                             teacher: 'Різник О.Я.',
                             link: 'https://us05web.zoom.us/j/8980159994?pwd=NHdsL3BVemFrWWdvZjJyVHhnV3gzZz09',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -177,7 +177,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                             name: "Методи та засоби ООАП",
                             teacher: 'Опришко М.І.',
                             link: 'https://meet.google.com/lookup/fjbq72rz64',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -255,7 +255,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "Веб-технології та веб-дизайн",
                             teacher: 'Яркун В.І.',
                             link: 'https://meet.google.com/tkb-nsfk-bvs',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -264,7 +264,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "ШНМ",
                             teacher: 'Розумовський М.П.',
                             link: 'https://meet.google.com/beb-kffp-pif',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -273,7 +273,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: 'Програмув. мобільних систем',
                             teacher: 'Івасюк Р.В.',
                             link: 'https://meet.google.com/yar-vkvb-vqm',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -314,7 +314,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "Моделювання систем",
                             teacher: 'Сінкевич О.В.',
                             link: 'https://meet.google.com/rki-wfdd-umk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -323,7 +323,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "Управління ІТ-проектами",
                             teacher: 'Яцишин С.І.',
                             link: 'https://meet.google.com/nnd-gtfc-muk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -345,7 +345,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
                             link: 'https://meet.google.com',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -354,7 +354,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "Технол. прог-ня та створ. прог. продуктів",
                             teacher: 'Різник О.Я.',
                             link: 'https://us05web.zoom.us/j/8980159994?pwd=NHdsL3BVemFrWWdvZjJyVHhnV3gzZz09',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -380,7 +380,7 @@ export const DominatorLessonsSchedule_KN_31_2: IGroup =
                             name: "Методи та засоби ООАП",
                             teacher: 'Опришко М.І.',
                             link: 'https://meet.google.com/lookup/fjbq72rz64',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -418,7 +418,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                         name: "Технол. прог-ня та створ. прог. продуктів",
                         teacher: 'Різник О.Я.',
                         link: 'https://us05web.zoom.us/j/8980159994?pwd=NHdsL3BVemFrWWdvZjJyVHhnV3gzZz09',
-                        type: 'Лаболаторне'
+                        type: 'Лабораторне'
                     }
                 },
                 {
@@ -427,7 +427,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                         name: "Веб-технології та веб-дизайн",
                         teacher: 'Яркун В.І.',
                         link: 'https://meet.google.com/tkb-nsfk-bvs',
-                        type: 'Лаболаторне'
+                        type: 'Лабораторне'
                     }
                 },
                 {
@@ -458,7 +458,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
                             link: 'https://meet.google.com',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -467,7 +467,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                             name: "Моделювання систем",
                             teacher: 'Сінкевич О.В.',
                             link: 'https://meet.google.com/rki-wfdd-umk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -476,7 +476,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                             name: "Методи та засоби ООАП",
                             teacher: 'Опришко М.І.',
                             link: 'https://meet.google.com/lookup/fjbq72rz64',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -517,7 +517,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                             name: "ШНМ",
                             teacher: 'Розумовський М.П.',
                             link: 'https://meet.google.com/beb-kffp-pif',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -526,7 +526,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                             name: 'Програмув. мобільних систем',
                             teacher: 'Сало М.Ф.',
                             link: 'https://meet.google.com/mab-hbgx-eyq',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -548,7 +548,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                             name: "Управління ІТ-проектами",
                             teacher: 'Яцишин С.І.',
                             link: 'https://meet.google.com/nnd-gtfc-muk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -616,7 +616,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                         name: "Технол. прог-ня та створ. прог. продуктів",
                         teacher: 'Різник О.Я.',
                         link: 'https://us05web.zoom.us/j/8980159994?pwd=NHdsL3BVemFrWWdvZjJyVHhnV3gzZz09',
-                        type: 'Лаболаторне'
+                        type: 'Лабораторне'
                     }
                 },
                 {
@@ -625,7 +625,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                         name: "Веб-технології та веб-дизайн",
                         teacher: 'Яркун В.І.',
                         link: 'https://meet.google.com/tkb-nsfk-bvs',
-                        type: 'Лаболаторне'
+                        type: 'Лабораторне'
                     }
                 },
                 {
@@ -661,7 +661,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                             name: "Системний аналіз",
                             teacher: 'Олянишен Т.В.',
                             link: 'https://meet.google.com',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -670,7 +670,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                             name: "Моделювання систем",
                             teacher: 'Сінкевич О.В.',
                             link: 'https://meet.google.com/rki-wfdd-umk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -679,7 +679,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                             name: "Методи та засоби ООАП",
                             teacher: 'Опришко М.І.',
                             link: 'https://meet.google.com/lookup/fjbq72rz64',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -720,7 +720,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                             name: "ШНМ",
                             teacher: 'Розумовський М.П.',
                             link: 'https://meet.google.com/beb-kffp-pif',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
@@ -729,7 +729,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                             name: 'Програмув. мобільних систем',
                             teacher: 'Сало М.Ф.',
                             link: 'https://meet.google.com/mab-hbgx-eyq',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                 ],
@@ -751,7 +751,7 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
                             name: "Управління ІТ-проектами",
                             teacher: 'Яцишин С.І.',
                             link: 'https://meet.google.com/nnd-gtfc-muk',
-                            type: 'Лаболаторне'
+                            type: 'Лабораторне'
                         }
                     },
                     {
