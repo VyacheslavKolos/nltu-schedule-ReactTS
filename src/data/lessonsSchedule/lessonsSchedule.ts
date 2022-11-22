@@ -42,7 +42,7 @@ export const NumeratorLessonsSchedule_KN_31_2: IGroup =
                         lessonInfo: {
                             name: "Методи та засоби ООАП",
                             teacher: 'Соколовський Я.І.',
-                            link: 'https://meet.google.com/',
+                            link: 'https://us02web.zoom.us/j/8894953167?pwd=dmZQNW9zR1lVV3pSaU5wd1RWVUgyUT09',
                             type: 'Лекція'
                         }
                     },
@@ -448,7 +448,7 @@ export const NumeratorLessonsSchedule_KN_31_1: IGroup =
                         lessonInfo: {
                             name: "Методи та засоби ООАП",
                             teacher: 'Соколовський Я.І.',
-                            link: 'https://meet.google.com/',
+                            link: 'https://us02web.zoom.us/j/8894953167?pwd=dmZQNW9zR1lVV3pSaU5wd1RWVUgyUT09',
                             type: 'Лекція'
                         }
                     },
