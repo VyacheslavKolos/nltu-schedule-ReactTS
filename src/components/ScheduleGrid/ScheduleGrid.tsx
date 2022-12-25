@@ -2,7 +2,6 @@ import * as React from 'react';
 import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import {Stack, Typography} from "@mui/material";
 import {
     AllGroupsDominatorSchedule,
@@ -24,42 +23,6 @@ const Item = styled(Paper)(({theme}) => ({
     color: theme.palette.text.secondary,
     width: '15.5%'
 }));
-
-
-// const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
-//     return (
-//         <Stack flexDirection={'column'} width={'100%'} pb={'30px'}>
-//             <Stack direction={'row'} alignItems={'center'}>
-//                 <Box sx={{
-//                     bgcolor: 'rgb(20, 21, 24)', width: '64px', height: '36px', borderRadius: '42px',
-//                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-//                 }}>
-//                     <Typography color={'white'}>{time}</Typography>
-//                 </Box>
-//                 <Box borderTop={'2px dashed rgb(20, 21, 24)'} width={'100%'}></Box>
-//             </Stack>
-//
-//             <Stack flexDirection={'row'} ml={'66px'}>
-//
-//                 {lessons.map(less => (
-//                     less.lessonInfo ?
-//                         <Grid item xl={2.4} key={less.day}>
-//                             <Item sx={{height: '140px'}}>
-//                                 <LessonCard lesson={less}/>
-//                             </Item>
-//                         </Grid> :
-//                         <Grid item xl={2.4} key={less.day}>
-//                             <Item
-//                                 sx={{height: '140px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-//                                 <Typography variant={'h5'}>Немає заняття</Typography>
-//                             </Item>
-//                         </Grid>
-//                 ))}
-//             </Stack>
-//
-//         </Stack>
-//     );
-// };
 
 
 const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
@@ -94,13 +57,11 @@ const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
 };
 
 
-
-
 const ScheduleGrid = () => {
 
     const {isNumerator, groupSchedule} = useAppSelector(state => state.lessonReducer)
 
-    const {schedule, group} = groupSchedule
+    let {schedule, group} = groupSchedule
 
     const dispatch = useAppDispatch();
 
@@ -122,6 +83,23 @@ const ScheduleGrid = () => {
     }, [isNumerator])
 
 
+    // Для адаптиву ********************************************
+    if (true) {
+
+    }else {
+        const lessonsForAdaptive: any[] = []
+        schedule.map(time => {
+            time.lessons.map(less => {
+                if (less.day === 'Понеділок') {
+                    lessonsForAdaptive.push({time: time.time, lessons: [less]})
+                }
+            })
+        })
+        console.log(lessonsForAdaptive);
+        schedule=lessonsForAdaptive
+    }
+
+
     return (
         <Box p={'20px 20px 20px 30px'} m={'36px 24px 64px'} sx={{
             borderRadius: '40px',
@@ -129,25 +107,6 @@ const ScheduleGrid = () => {
             boxShadow: 'rgb(0 0 0 / 5%) 0px 4px 12px',
             flexGrow: 1
         }}>
-            {/*<Grid container spacing={1}>*/}
-
-            {/*    <Grid container item spacing={6}>*/}
-            {/*        <Stack flexDirection={'row'} gap={'270px'} width={'100%'} justifyContent={'center'} mt={'14px'} ml={'30px'}>*/}
-            {/*            <Typography variant={"h6"} sx={{}}>Понеділок</Typography>*/}
-            {/*            <Typography variant={"h6"}>Вівторок</Typography>*/}
-            {/*            <Typography variant={"h6"}>Середа</Typography>*/}
-            {/*            <Typography variant={"h6"}>Четвер</Typography>*/}
-            {/*            <Typography variant={"h6"}>П'ятниця</Typography>*/}
-            {/*        </Stack>*/}
-            {/*    </Grid>*/}
-
-            {/*    {schedule.map((day,ind)  => (*/}
-            {/*        <Grid container item spacing={3} key={ind}>*/}
-            {/*            <FormRow time={day.time} lessons={day.lessons}/>*/}
-            {/*        </Grid>*/}
-            {/*    ))}*/}
-            {/*</Grid>*/}
-
 
             <Box>
                 <Stack flexDirection={'row'} justifyContent={'space-between'}

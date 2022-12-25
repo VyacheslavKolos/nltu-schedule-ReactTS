@@ -6,10 +6,11 @@ import {Route, Routes} from "react-router-dom";
 import {Header} from "./components";
 import Session from "./components/Session";
 import Schedule from "./components/Schedule";
+import {Box} from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
+    <Box className="App" >
           <Header/>
 
         <Routes>
@@ -17,7 +18,7 @@ function App() {
             <Route path="/session" element={<Session />} />
 
         </Routes>
-    </div>
+    </Box>
   );
 }
 
