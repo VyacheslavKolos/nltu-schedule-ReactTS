@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
     const {lessonInfo} = lesson;
     return (
-        <Stack direction={'column'} gap={'10px'} alignItems={'center'}>
+        <Stack direction={'column'} gap={'10px'} alignItems={'center'} sx={{backgroundColor:'white'}}>
             <Box sx={{
                 bgcolor: lessonInfo?.type === 'Лекція' ? 'rgb(255, 127, 150)' : 'rgb(148, 157, 255)',
                 height: '27px',
