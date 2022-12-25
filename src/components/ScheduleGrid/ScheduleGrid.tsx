@@ -94,6 +94,8 @@ const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
 };
 
 
+
+
 const ScheduleGrid = () => {
 
     const {isNumerator, groupSchedule} = useAppSelector(state => state.lessonReducer)
