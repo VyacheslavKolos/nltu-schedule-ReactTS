@@ -57,7 +57,8 @@ const Header: FC = () => {
 
                     <Stack direction={'row'} gap={'15px'} justifyContent={'center'} alignItems={'center'}
                            sx={{
-                        display:{xs:'flex', lg:'none'}}}
+                               display: {xs: 'flex', lg: 'none'}
+                           }}
                     >
                         <Typography variant={'h6'} fontSize={'20px'}>
                             Оберіть день :

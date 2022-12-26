@@ -4,38 +4,21 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {isEvenWeek} from "../usefulFunctions/usefulFunctions";
-import {useAppDispatch, useAppSelector} from "../hooks";
-import {
-    AllGroupsDominatorSchedule,
-    AllGroupsNumeratorSchedule,
-    NumeratorLessonsSchedule_KN_31_2
-} from "../data/lessonsSchedule/lessonsSchedule";
-import {IGroup} from "../interfaces";
+import {useAppDispatch} from "../hooks";
 
-import {setGroupSchedule, setIsNumeratorWeek} from "../store/slices";
+import { setSelectedDayAdaptive} from "../store/slices";
 
 const DayChooser = () => {
     const [dayName, setDayName] = React.useState('Понеділок');
-    const days = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця']
+    const days = ['Понеділок', 'Вівторок', 'Cереда', 'Четвер', 'П\'ятниця']
 
     const dispatch = useAppDispatch();
 
-    const {isNumerator} = useAppSelector(state => state.lessonReducer)
 
     const handleChange = (event: SelectChangeEvent) => {
         setDayName(event.target.value as string);
+        dispatch(setSelectedDayAdaptive(event.target.value as string))
     };
-
-    const setSchedule = (group: IGroup) => {
-
-        if (!isNumerator) {
-            dispatch(setIsNumeratorWeek(true))
-        }
-
-        dispatch(setGroupSchedule(group))
-    };
-
 
     return (
         <Box sx={{minWidth: 120}}>
@@ -50,10 +33,10 @@ const DayChooser = () => {
                 >
 
                     {
-                        days.map(day =>(
+                        days.map(day => (
                             <MenuItem value={day}
-                                          sx={{width: '100px', m: '0 auto'}}
-                                          key={day}>{day}</MenuItem>
+                                      sx={{width: '100px', m: '0 auto'}}
+                                      key={day}>{day}</MenuItem>
                         ))
                     }
 

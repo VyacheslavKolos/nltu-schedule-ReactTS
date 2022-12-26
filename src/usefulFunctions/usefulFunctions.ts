@@ -5,3 +5,11 @@ export function isEvenWeek() {
     let weekNumber = Math.ceil(days / 7);
     return weekNumber % 2 === 0;
 }
+
+export function windowSize() {
+    const windowWidth = window.outerWidth;
+  if (windowWidth<600){
+      return true;
+  }
+
+}

@@ -9,12 +9,14 @@ interface ILessonsState {
     isNumerator: boolean,
     errors: object,
     groupSchedule: IGroup,
+    selectedDayAdaptive: string;
 }
 
 const initialState: ILessonsState = {
     isNumerator: true,
     errors: [],
-    groupSchedule:NumeratorLessonsSchedule_KN_31_2,
+    groupSchedule: NumeratorLessonsSchedule_KN_31_2,
+    selectedDayAdaptive: 'Понеділок'
 }
 
 export const lessonsSlice = createSlice({
@@ -27,10 +29,11 @@ export const lessonsSlice = createSlice({
         setGroupSchedule: ((state, action) => {
             state.groupSchedule = action.payload
         }),
+        setSelectedDayAdaptive: ((state, action) => {
+            state.selectedDayAdaptive = action.payload
+        }),
     },
-    extraReducers: {
-
-    }
+    extraReducers: {}
 
 })
 
@@ -40,5 +43,6 @@ export default recordReducer;
 export const {
     setIsNumeratorWeek,
     setGroupSchedule,
+    setSelectedDayAdaptive
 } = lessonsSlice.actions;
 

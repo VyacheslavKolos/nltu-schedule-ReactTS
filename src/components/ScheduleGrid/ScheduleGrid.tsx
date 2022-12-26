@@ -12,16 +12,14 @@ import {ILesson} from "../../interfaces";
 import {LessonCard} from "../LessonCard";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setGroupSchedule} from "../../store/slices";
-import {isEvenWeek} from "../../usefulFunctions/usefulFunctions";
+import {isEvenWeek, windowSize} from "../../usefulFunctions/usefulFunctions";
 
 
 const Item = styled(Paper)(({theme}) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
     padding: theme.spacing(3),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    width: '15.5%'
 }));
 
 
@@ -38,15 +36,21 @@ const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
                 <Box borderTop={'2px dashed rgb(20, 21, 24)'} width={'100%'}></Box>
             </Stack>
 
-            <Stack flexDirection={'row'} ml={'66px'} justifyContent={'space-between'}>
+            <Stack flexDirection={'row'}  justifyContent={'space-between'} sx={{ml:{lg:'66px',xs:'50px'}}}>
                 {lessons.map(less => (
                     less.lessonInfo ?
-                        <Item key={less.day} sx={{height: '140px'}}>
+                        <Item key={less.day} sx={{height: '140px', width: {lg: '15.5%', xs: '75%'}}}>
                             <LessonCard lesson={less}/>
                         </Item>
                         :
                         <Item key={less.day}
-                              sx={{height: '140px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                              sx={{
+                                  width: {lg: '15.5%', xs: '78%'},
+                                  height: '140px',
+                                  display: 'flex',
+                                  justifyContent: 'center',
+                                  alignItems: 'center'
+                              }}>
                             <Typography variant={'h5'}>Немає заняття</Typography>
                         </Item>
                 ))}
@@ -59,7 +63,7 @@ const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
 
 const ScheduleGrid = () => {
 
-    const {isNumerator, groupSchedule} = useAppSelector(state => state.lessonReducer)
+    const {isNumerator, groupSchedule, selectedDayAdaptive} = useAppSelector(state => state.lessonReducer)
 
     let {schedule, group} = groupSchedule
 
@@ -84,19 +88,17 @@ const ScheduleGrid = () => {
 
 
     // Для адаптиву ********************************************
-    if (true) {
 
-    }else {
+    if (windowSize()) {
         const lessonsForAdaptive: any[] = []
         schedule.map(time => {
             time.lessons.map(less => {
-                if (less.day === 'Понеділок') {
+                if (less.day === selectedDayAdaptive) {
                     lessonsForAdaptive.push({time: time.time, lessons: [less]})
                 }
             })
         })
-        console.log(lessonsForAdaptive);
-        schedule=lessonsForAdaptive
+        schedule = lessonsForAdaptive
     }
 
 
@@ -111,20 +113,23 @@ const ScheduleGrid = () => {
             <Box>
                 <Stack flexDirection={'row'} justifyContent={'space-between'}
                        ml={'66px'}>
-                    <Typography variant={"h6"} sx={{
-                        width: '15.5%',
-                        textAlign: 'center',
-                        pl: '24px',
-                        pr: '24px'
-                    }}>Понеділок</Typography>
-                    <Typography variant={"h6"}
-                                sx={{width: '15.5%', textAlign: 'center', pl: '24px', pr: '24px'}}>Вівторок</Typography>
-                    <Typography variant={"h6"}
-                                sx={{width: '15.5%', textAlign: 'center', pl: '24px', pr: '24px'}}>Середа</Typography>
-                    <Typography variant={"h6"}
-                                sx={{width: '15.5%', textAlign: 'center', pl: '24px', pr: '24px'}}>Четвер</Typography>
-                    <Typography variant={"h6"}
-                                sx={{width: '15.5%', textAlign: 'center', pl: '24px', pr: '24px'}}>П'ятниця</Typography>
+
+                    {!windowSize() ?
+                        schedule.map((time, ind) => (
+                            <Typography key={ind} variant={"h6"} sx={{
+                                width: '15.5%',
+                                textAlign: 'center',
+                                pl: '24px',
+                                pr: '24px'
+                            }}> {time.lessons[ind].day}</Typography>)) :
+                        <Typography variant={"h6"} sx={{
+                            width: '15.5%',
+                            textAlign: 'center',
+                            pl: '24px',
+                            pr: '24px'
+                        }}> {selectedDayAdaptive}</Typography>
+                    }
+
                 </Stack>
 
                 {schedule.map((day, ind) => (

@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
     const {lessonInfo} = lesson;
     return (
-        <Stack direction={'column'} gap={'10px'} alignItems={'center'} sx={{backgroundColor:'white'}}>
+        <Stack direction={'column'} gap={'10px'} alignItems={'center'} sx={{backgroundColor: 'white'}}>
             <Box sx={{
                 bgcolor: lessonInfo?.type === 'Лекція' ? 'rgb(255, 127, 150)' : 'rgb(148, 157, 255)',
                 height: '27px',
@@ -32,7 +32,7 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
                     fontSize: '16px',
                     lineHeight: '17px',
                     color: 'rgb(20, 21, 24)',
-                    boxSizing:'border-box',
+                    boxSizing: 'border-box',
 
                 }}>
                     {lessonInfo?.name}
@@ -44,13 +44,13 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
                 {lessonInfo?.teacher}
             </Stack>
 
-            <Stack direction={'row'} gap={'6px'} alignItems={'center'}>
+            <Stack direction={'row'} alignItems={'center'}>
 
                 <Link target={'_blank'} href={lessonInfo?.link}>
-                    <Button variant="contained"  >
-                    <InsertLinkIcon/>
-                    go to the lesson
-                </Button>
+                    <Button variant="contained" sx={{width:'180px', gap:'8px'}} >
+                        <InsertLinkIcon/>
+                        Link
+                    </Button>
                 </Link>
 
             </Stack>
