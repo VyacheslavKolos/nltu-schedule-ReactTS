@@ -792,8 +792,9 @@ export const DominatorLessonsSchedule_KN_31_1: IGroup =
         ]
     }
 
-
 export const AllGroupsNumeratorSchedule : IGroup[]=[NumeratorLessonsSchedule_KN_31_2, NumeratorLessonsSchedule_KN_31_1];
 
 export const AllGroupsDominatorSchedule : IGroup[]=[DominatorLessonsSchedule_KN_31_2, DominatorLessonsSchedule_KN_31_1];
+
+// console.log(JSON.stringify(DominatorLessonsSchedule_KN_31_1))
 

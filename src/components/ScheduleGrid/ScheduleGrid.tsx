@@ -7,12 +7,13 @@ import {
     AllGroupsDominatorSchedule,
     AllGroupsNumeratorSchedule,
 } from "../../data/lessonsSchedule/lessonsSchedule";
-import {FC, useEffect} from "react";
+import {FC, useEffect, useState} from "react";
 import {ILesson} from "../../interfaces";
 import {LessonCard} from "../LessonCard";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setGroupSchedule} from "../../store/slices";
 import {isEvenWeek, windowSize} from "../../usefulFunctions/usefulFunctions";
+import {useSearchParams} from "react-router-dom";
 
 
 const Item = styled(Paper)(({theme}) => ({
@@ -24,8 +25,10 @@ const Item = styled(Paper)(({theme}) => ({
 
 
 const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
+
     return (
         <Stack flexDirection={'column'} width={'100%'}>
+
             <Stack direction={'row'} alignItems={'center'}>
                 <Box sx={{
                     bgcolor: 'rgb(20, 21, 24)', width: '64px', height: '36px', borderRadius: '42px',
@@ -36,26 +39,11 @@ const FormRow: FC<{ time: string, lessons: ILesson[] }> = ({time, lessons}) => {
                 <Box borderTop={'2px dashed rgb(20, 21, 24)'} width={'100%'}></Box>
             </Stack>
 
-            <Stack flexDirection={'row'}  justifyContent={'space-between'} sx={{ml:{lg:'66px',xs:'50px'}}}>
+            <Stack flexDirection={'row'} justifyContent={'space-between'} sx={{ml: {lg: '66px', xs: '50px'}}}>
                 {lessons.map(less => (
-                    less.lessonInfo ?
-                        <Item key={less.day} sx={{height: '140px', width: {lg: '15.5%', xs: '75%'}}}>
-                            <LessonCard lesson={less}/>
-                        </Item>
-                        :
-                        <Item key={less.day}
-                              sx={{
-                                  width: {lg: '15.5%', xs: '78%'},
-                                  height: '140px',
-                                  display: 'flex',
-                                  justifyContent: 'center',
-                                  alignItems: 'center'
-                              }}>
-                            <Typography variant={'h5'}>Немає заняття</Typography>
-                        </Item>
+                    <LessonCard key={less.day} lesson={less}/>
                 ))}
             </Stack>
-
         </Stack>
     );
 };

@@ -7,3 +7,6 @@ export * from './Session';
 export * from './Schedule';
 export * from './ScheduleGrid/ScheduleGrid';
 export * from './LessonCard';
+export * from './EditCard/EditCard'
+export * from './AddCard/AddCard';
+export * from './DeleteCard/DeleteCard';
