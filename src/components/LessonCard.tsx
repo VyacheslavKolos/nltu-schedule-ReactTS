@@ -24,8 +24,10 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
     let [searchParams, setSearchParams] = useSearchParams();
     const isAdmin = searchParams.get('admin')
 
+
     const {lessonInfo} = lesson;
     const [isShown, setIsShown] = useState(false);
+
 
     return (
         <Item
@@ -36,11 +38,12 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
             }}
             onMouseEnter={() => setIsShown(true)}
             onMouseLeave={() => setIsShown(false)}
+
         >
             {lessonInfo ?
                 <Stack direction={'column'} gap={'10px'} alignItems={'center'} sx={{
                     backgroundColor: 'white',
-                    display: isShown ? 'none' : 'flex'
+                    display: (isShown && isAdmin) ? 'none' : 'flex'
                 }}
                 >
                     <Box sx={{
@@ -89,7 +92,7 @@ const LessonCard: FC<{ lesson: ILesson }> = ({lesson}) => {
 
                 </Stack> :
 
-                <Typography variant={'h5'} sx={{display: isShown ? 'none' : 'flex'}}
+                <Typography variant={'h5'} sx={{ display: (isShown && isAdmin) ? 'none' : 'flex'}}
                 >
                     Немає заняття
                 </Typography>

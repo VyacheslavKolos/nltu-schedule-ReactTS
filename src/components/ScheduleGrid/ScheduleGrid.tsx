@@ -89,6 +89,7 @@ const ScheduleGrid = () => {
         schedule = lessonsForAdaptive
     }
 
+    console.log(groupSchedule);
 
     return (
         <Box p={'20px 20px 20px 30px'} m={'36px 24px 64px'} sx={{
